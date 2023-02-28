@@ -25,3 +25,8 @@ def intro():
     else:
         print("Incorrect input! Please answer y/n")
         intro()
+
+
+def main():
+    intro()
+    
