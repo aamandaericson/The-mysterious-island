@@ -28,5 +28,7 @@ def intro():
 
 
 def main():
+    """
+    Main fuction to run the other functions.
+    """
     intro()
-    
