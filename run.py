@@ -27,6 +27,14 @@ def intro():
         intro()
 
 
+def game_over():
+    """
+    Prints game over message to terminal and quits game.
+    """
+    print("YOU DIED! GAME OVER!")
+    quit()
+
+
 def box_or_search():
     """
     Function that leads user to different places depending on input.
