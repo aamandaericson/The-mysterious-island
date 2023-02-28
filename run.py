@@ -11,3 +11,17 @@ def intro():
     print("You try to pull it of with all of your strength but it's stuck.\n")
     print('"... What is this... Where am I... What is going on?"\n')
     print('"... I do not remember anything... Not even my name..."\n')
+
+    global answer
+
+    answer = str.lower((input("Do you want to start to feel your way around? (y/n): ")))
+
+    if answer == "y":
+        choices()
+    elif answer == "n":
+        print("\nYou give up and accept your fate.")
+        print("Days go by and you finally close your eyes and never wake up.")
+        game_over()
+    else:
+        print("Incorrect input! Please answer y/n")
+        intro()
