@@ -1,3 +1,7 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+def intro():
+    """
+    Function for intro of the game. Input is required by the user. 
+    If input is "y" the game starts and if input is "n" the game quits.
+    Any other input leads to demand for input from user again.
+    """
+    
