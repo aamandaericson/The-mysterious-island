@@ -48,13 +48,29 @@ def box_or_search():
     while True:
         answer = input("Do you open the box? (y/n): ")
         if answer == "y":
-            print("open_box")
+            open_box()
             break
         elif answer == "n":
             print("search")
             break
         else:
             print("Incorrect input! Please answer y/n")
+
+
+def open_box():
+    """
+    Function that leads to the following buttons game. 
+    Print statements and then a function call. 
+    """
+
+    print("The box seems to be made of metal.")
+    print("You can feel three buttons on the top.")
+    print("You press one and suddenly a voice starts speaking to you from the box.\n")
+    print('"WELCOME TO YOUR FIRST TEST."')
+    print('"PLEASE ENTER PRESS THE BUTTONS IN THE RIGHT SEQUENCE!\n')
+    print('"...My first test..?"')
+    print('"...I guess I have to find the right sequence then..?"\n')
+    print("Buttons game")
 
 
 def main():
