@@ -31,7 +31,8 @@ def box_or_search():
     """
     Function that leads user to different places depending on input.
     Demands user input. While loop that runs until user input is "y" or "n".
-    In any other case the user will get a message that tells them to input "y" or "n".
+    In any other case the user will get a message, 
+    that tells them to input "y" or "n".
     """
     print("\nYou realize you will not get the helmet of.")
     print("You start using your hands to feel around.")
