@@ -74,7 +74,7 @@ def open_box():
     print('"PLEASE ENTER PRESS THE BUTTONS IN THE RIGHT SEQUENCE!\n')
     print('"...My first test..?"')
     print('"...I guess I have to find the right sequence then..?"\n')
-    print("Buttons game")
+    buttons_game()
 
 
 def search():
