@@ -1,3 +1,5 @@
+inventory = [""]
+
 def intro():
     """
     Function for intro of the game. Input is required by the user.
@@ -71,6 +73,10 @@ def open_box():
     print('"...My first test..?"')
     print('"...I guess I have to find the right sequence then..?"\n')
     print("Buttons game")
+
+
+def search():
+    
 
 
 def main():
