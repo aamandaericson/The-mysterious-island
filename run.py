@@ -169,6 +169,31 @@ def buttons_game():
             game_over()
 
 
+def computer_scene():
+    """
+    The user enters the computer scene.
+    Requires user input for choosing one of four alternatives.
+    Any other input than the four alternatives gives an error message, 
+    and the user must try again.
+    
+
+    """
+    print("On the display you can see four choices\n")
+    print("LOGIN\n"
+          "INFORMATION\n"
+          "PLAY\n"
+          "LEAVE\n")
+    answer = input("What do you choose? (login/information/play/leave): ")
+    if answer == "login":
+        print(f"You choose {answer.upper()}")
+
+        username = "ava"
+        password = "1965"
+
+        username_guess = input("ENTER USERNAME: ")
+        password_guess = input("ENTER PASSWORD: ")
+
+
 def main():
     """
     Main fuction to run the other functions.
