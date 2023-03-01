@@ -1,5 +1,8 @@
-#Empty list which items are added and removed from through functions. 
+# Empty list which items are added and removed from through functions. 
 inventory = [""]
+
+# Starting health.
+health = 100
 
 
 def intro():
