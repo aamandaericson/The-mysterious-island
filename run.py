@@ -219,6 +219,9 @@ def computer_scene():
             print('"...My name is... Ava and I am a scientist."')
             print("Interrupting your thoughts, a door appears on the other side of the room.")
             computer_scene()
+        else:
+            print("USERNAME: INCORRECT")
+            print("PASSWORD: INCORRECT")
 
 
 def main():
