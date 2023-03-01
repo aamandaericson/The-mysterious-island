@@ -236,6 +236,22 @@ def computer_scene():
         print("Some sort of electric chock buzz you through the helmet\n")
 
 
+def decrease_health():
+    """
+    Decreases player health. Prints the health to the terminal.
+    If health reaches 0 the game_over function is called.
+    """
+    global health
+    health -= 10
+    print(f"Your health: {health}\n")
+
+    if health == 0:
+        print("The pain is so sharp.")
+        print("You feel panicked and fall to the ground.")
+        print("Everything goes dark.")
+        game_over()
+
+
 def main():
     """
     Main fuction to run the other functions.
