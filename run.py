@@ -79,6 +79,10 @@ def search():
 
 
 def add_to_inventory(item):
+    """
+    Adds items to inventory list.
+    """
+    inventory.append(item)
 
 
 def remove_from_inventory(item):
