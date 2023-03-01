@@ -309,7 +309,6 @@ def computer_scene():
             computer_scene()
 
 
-
 def decrease_health():
     """
     Decreases player health. Prints the health to the terminal.
@@ -324,6 +323,52 @@ def decrease_health():
         print("You feel panicked and fall to the ground.")
         print("Everything goes dark.")
         game_over()
+
+
+def time_room():
+    """
+    Function that takes user input to start the minigame. 
+    Inside a while loop the user input leads to differen scenarios. 
+    A for loop creates a count down.
+    """
+    print("\nA voice speaks through a speaker")
+    print("\nWELCOME TO THE TIME ROOM.")
+    print("HERE, TIME IS OF THE ESSENCE.")
+    print("DO YOU WISH TO START THE TEST?\n")
+
+    answer = input("Start test? (y/n): ")
+    while True:
+        if answer == "y":
+            print("YOU CHOSE TO START THE TEST.")
+            print("A ticking sound starts.")
+            print("Then it changes into a robotic voice")
+            print("\nCOUNTDOWN STARTING. YOU HAVE 180 SECONDS\n")
+
+            for x in range(180, 177, -1):
+                print(str(x) + " SECONDS REMAINING")
+                time.sleep(1)
+
+            print('\n"...What am I supposed to do..?"\n')
+            time.sleep(2)
+            print("You desperately look around and see a table with something on it.")
+            time.sleep(2)
+            print("You run over to see what it is and realize it is a clock.")
+            time.sleep(2)
+            print("As you do, you hear the voice in the background.\n")
+            time.sleep(2)
+
+            for x in range(170, 166, -1):
+                print(str(x) + " SECONDS REMAINING")
+                time.sleep(1)
+            print("clock-game")
+            break
+        elif answer == "n":
+            print("You had enough")
+            print('\n"I don\'t want to do this anymore!"\n')
+            decrease_health()
+            time_room()
+        else:
+            print("Please enter one of the options!")
 
 
 def main():
