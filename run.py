@@ -103,7 +103,7 @@ def search():
             print("You put the key in the key hole.")
             remove_from_inventory("key")
             print("Key was removed from your inventory\n")
-            print("computerscene")
+            computer_scene()
             break
         else:
             answer = input("You have no key, Do you want to keep exploring or go to the box? (explore/box): ")
@@ -161,7 +161,7 @@ def buttons_game():
 
             add_to_inventory("key")
             search()
-            print("computerscene")
+            computer_scene()
             break
 
         if attempts_left == 0:
