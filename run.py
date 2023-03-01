@@ -158,7 +158,7 @@ def buttons_game():
 
             add_to_inventory("key")
             search()
-            print("Go to computer")
+            print("computerscene")
             break
 
         if attempts_left == 0:
