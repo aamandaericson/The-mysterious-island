@@ -234,6 +234,8 @@ def computer_scene():
         print("FINAL TEST WILL BE GIVEN WHEN LOGGED IN.\n")
         print("A sharp pain shoots through your head")
         print("Some sort of electric chock buzz you through the helmet\n")
+        decrease_health()
+        computer_scene()
 
 
 def decrease_health():
