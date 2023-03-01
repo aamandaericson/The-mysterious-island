@@ -1,6 +1,7 @@
 #Empty list which items are added and removed from through functions. 
 inventory = [""]
 
+
 def intro():
     """
     Function for intro of the game. Input is required by the user.
@@ -87,7 +88,7 @@ def search():
     print("\nYou let go of the box and keep feeling your way through the room")
     print("When moving around you feel that something is pulling lightly onto the helmet")
     print("You touch the back of your head and you can feel a small cord connected to the helmet.\n")
-    print(f'..."What is this thing..?"\n')
+    print('..."What is this thing..?"\n')
     print("You keep moving around and bump into something.")
     print("It seems to be a desk and you can feel a bunch of wires.\n")
     print('"... It must be a computer..!"\n')
@@ -133,6 +134,8 @@ def remove_from_inventory(item):
     Removes items to inventory list.
     """
     inventory.remove(item)
+
+
     
 
 def main():
