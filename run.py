@@ -1,3 +1,5 @@
+import time
+
 # Empty list which items are added and removed from through functions. 
 inventory = [""]
 
