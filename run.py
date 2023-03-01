@@ -76,6 +76,13 @@ def open_box():
 
 
 def search():
+
+
+def add_to_inventory(item):
+
+
+def remove_from_inventory(item):
+
     
 
 
