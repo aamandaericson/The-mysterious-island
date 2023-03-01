@@ -237,6 +237,60 @@ def computer_scene():
         decrease_health()
         computer_scene()
 
+    elif answer == "play":
+        play = True
+        while play:
+            print("\nYOU CHOSE PLAY, WELCOME TO THE GAME")
+            print("YOU WILL BE ASKED THREE RIDDLES.")
+            print("ANSWER WISELY\n")
+            question_1 = "candle"
+            question_1_guess = input(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD. WHAT AM I? (candle/mountain/glass): ")
+            if question_1 == question_1_guess:
+                print("CORRECT! ANSWER: A candle")
+            elif question_1 == "mountain" or "glass":
+                print("INCORRECT!")
+                print("You feel a sharp pain.")
+                decrease_health()
+            else:
+                print("INCORRECT INPUT")
+                print("You feel a sharp pain.")
+                decrease_health()
+
+            question_2 = "verb"
+            question_2_guess = input(" I RUN, I WALK, I TALK. WHAT AM I? (child/verb/ghost): ")
+            if question_2 == question_2_guess:
+                print("CORRECT! ANSWER: V erb")
+            elif question_2 == "child" or "ghost":
+                print("INCORRECT!")
+                print("You feel a sharp pain.")
+                decrease_health()
+            else:
+                print("INCORRECT INPUT")
+                print("You feel a sharp pain.")
+                decrease_health()
+
+            question_3 = "echo"
+            question_3_guess = input(" WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO? (echo/mute/scream): ")
+            if question_3 == question_3_guess:
+                print("CORRECT! ANSWER: A n echo")
+            elif question_3 == "mute" or "scream":
+                print("INCORRECT!")
+                print("You feel a sharp pain.")
+                decrease_health()
+            else:
+                print("INCORRECT INPUT")
+                print("You feel a sharp pain.")
+                decrease_health()
+
+            if question_1 == question_1_guess and question_2 == question_2_guess and question_3 == question_3_guess:
+                print("\nALL RIDDLES WAS ANSWERED CORRECTLY.")
+                print("The computer starts to whir and a small note is printed.")
+                computer_scene()
+                break
+
+            else:
+                print("\nONE OR MORE INCORRECT ANSWERS, TRY AGAIN\n")
+
 
 def decrease_health():
     """
