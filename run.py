@@ -6,6 +6,9 @@ inventory = [""]
 # Starting health.
 health = 100
 
+# Starting time for clock_game
+starting_time = 167
+
 
 def intro():
     """
