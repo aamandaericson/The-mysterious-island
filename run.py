@@ -370,6 +370,22 @@ def time_room():
         else:
             print("Please enter one of the options!")
 
+def clock_game():
+
+    def countdown():
+        global starting_time
+        starting_time -= 3
+        for x in range(starting_time, starting_time - 3, -1):
+            print(str(x) + " SECONDS REMAINING")
+            time.sleep(1)
+
+        if time == 0:
+            print("YOUR TIME IS UP")
+            print("EVERYTHING GOES DARK.")
+            print("DEATH WILL BE FAST.")
+            print("THE SHARP PAIN CONSUMES YOU UNTIL YOU ARE NO MORE.")
+            game_over()
+
 
 def main():
     """
