@@ -290,6 +290,22 @@ def computer_scene():
 
             else:
                 print("\nONE OR MORE INCORRECT ANSWERS, TRY AGAIN\n")
+    elif answer == "leave":
+        if access_card in inventory:
+            print("You go over to the door and try put the access card to the monitor.")
+            print("The door opens!\n")
+            print("You go through the door.\n")
+            print("time room.")
+        elif access_card not in inventory:
+            print("\nYou walk away from the computer and realize you have to do something more with it.")
+            print("You go back\n")
+            computer_scene()
+
+        else:
+            print("\nYou walk away from the computer and realize you have to do something more with it.")
+            print("You go back\n")
+            computer_scene()
+
 
 
 def decrease_health():
