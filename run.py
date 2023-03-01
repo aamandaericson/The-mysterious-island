@@ -389,6 +389,67 @@ def clock_game():
             print("THE SHARP PAIN CONSUMES YOU UNTIL YOU ARE NO MORE.")
             game_over()
 
+    
+        def time_input():
+            hour_hand = 3
+            minute_hand = 15
+
+            while True:
+                try:
+                    hour_hand_guess = int(input("HOUR HAND: "))
+                    if 0 < int(hour_hand_guess) <= 12:
+                        break
+                    else:
+                        print("\nPLEASE ENTER NUMBERS BETWEEN 1-12 FOR HOURS.\n")
+                except ValueError:
+                    print("\nPLEASE ENTER NUMBERS BETWEEN 1-12 FOR HOURS.\n")
+
+            while True:
+                try:
+                    minute_hand_guess = int(input("MINUTE HAND: "))
+                    if 0 <= int(minute_hand_guess) < 60:
+                        break
+                    else:
+                        print("\nPLEASE ENTER NUMBERS BETWEEN 0-59 FOR MINUTES.\n")
+                except ValueError:
+                    print("\nPLEASE ENTER NUMBERS BETWEEN 0-59 FOR MINUTES\n")
+
+            while True:
+                try:
+                    green_button = input("Is this the time? (y/n): ")
+                    if green_button == "y":
+
+                        # Code to check answer
+                        if hour_hand_guess == hour_hand and minute_hand_guess == minute_hand:
+                            print("AH! THE TIME IS A QUARTER PAST THREE"
+                                ".")
+                            print("THANK YOU.")
+                            print("PLEASE MOVE ON TO THE NEXT ROOM.")
+                            water_room()
+                            break
+                        elif hour_hand_guess == hour_hand and minute_hand_guess != minute_hand:
+                            print("\nTHAT IS THE RIGHT HOUR. BUT WHAT IS THE MINUTE?")
+                            print("PLEASE TRY AGAIN\n")
+                            countdown()
+                            time_input()
+                        elif hour_hand_guess != hour_hand and minute_hand_guess == minute_hand:
+                            print("\nTHAT IS THE RIGHT MINUTE. BUT WHAT IS THE HOUR?")
+                            print("PLEASE TRY AGAIN\n")
+                            countdown()
+                            time_input()
+                        elif hour_hand_guess != hour_hand and minute_hand_guess != minute_hand:
+                            print("\nTHAT IS NOT THE TIME.")
+                            print("PLEASE TRY AGAIN\n")
+                            countdown()
+                            time_input()
+                        else:
+                            time_input()
+                    else:
+                        countdown()
+                        time_input()
+                except ValueError:
+                    print("\nPLEASE ENTER y or n.\n")
+
 
 def main():
     """
