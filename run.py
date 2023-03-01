@@ -71,6 +71,7 @@ def open_box():
     print('"...My first test..?"')
     print('"...I guess I have to find the right sequence then..?"\n')
     print("Buttons game")
+    FORTSÄTT HÄR.
 
 
 def main():
