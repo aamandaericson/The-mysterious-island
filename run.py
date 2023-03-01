@@ -1,3 +1,4 @@
+#Empty list which items are added and removed from through functions. 
 inventory = [""]
 
 def intro():
@@ -76,6 +77,48 @@ def open_box():
 
 
 def search():
+    """
+    Function that lets the user search around the room. 
+    If "key" is in the inventory list the computer_scene function is called. 
+    If not, the user will have to provide input if they want to
+    keep searching or return to the box.
+    If they choose the box, the open_box function is called.  
+    """
+    print("\nYou let go of the box and keep feeling your way through the room")
+    print("When moving around you feel that something is pulling lightly onto the helmet")
+    print("You touch the back of your head and you can feel a small cord connected to the helmet.\n")
+    print(f'..."What is this thing..?"\n')
+    print("You keep moving around and bump into something.")
+    print("It seems to be a desk and you can feel a bunch of wires.\n")
+    print('"... It must be a computer..!"\n')
+    print("Blindly feeling around, you some feel some sort of cavity.")
+    print('"A key hole!"\n')
+
+    while True:
+        if "key" in inventory:
+            print("You put the key in the key hole.")
+            remove_from_inventory("key")
+            print("Key was removed from your inventory\n")
+            print("computerscene")
+            break
+        else:
+            answer = input("You have no key, Do you want to keep exploring or go to the box? (explore/box): ")
+
+            if answer == "explore":
+                print("You walk around but can't find anything but the box")
+                answer = input("Do you want to open the box? (y/n): ")
+                if answer == "y":
+                    open_box()
+                    break
+                elif answer == "n":
+                    search()
+                    break
+
+            elif answer == "box":
+                open_box()
+                break
+            else:
+                print("Incorrect input! Please answer y/n")
 
 
 def add_to_inventory(item):
@@ -91,7 +134,6 @@ def remove_from_inventory(item):
     """
     inventory.remove(item)
     
-
 
 def main():
     """
