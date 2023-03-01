@@ -222,6 +222,15 @@ def computer_scene():
         else:
             print("USERNAME: INCORRECT")
             print("PASSWORD: INCORRECT")
+    
+    elif answer == "information":
+        print("\nYOU HAVE BEEN PUT HERE TO BE TESTED.")
+        print("THE TESTS WILL BE HARD AND CHALLENGING.")
+        print("SOME TESTS MIGHT KILL YOU AT ONCE.")
+        print("SOME TESTS MIGHT JUST HARM YOU.")
+        print("FINAL TEST WILL BE GIVEN WHEN LOGGED IN.\n")
+        print("A sharp pain shoots through your head")
+        print("Some sort of electric chock buzz you through the helmet\n")
 
 
 def main():
