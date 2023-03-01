@@ -175,7 +175,7 @@ def computer_scene():
     Requires user input for choosing one of four alternatives.
     Any other input than the four alternatives gives an error message, 
     and the user must try again.
-    
+
 
     """
     print("On the display you can see four choices\n")
@@ -192,6 +192,33 @@ def computer_scene():
 
         username_guess = input("ENTER USERNAME: ")
         password_guess = input("ENTER PASSWORD: ")
+
+        if username_guess == username and password_guess == password:
+            print("USERNAME: CORRECT")
+            print("PASSWORD: CORRECT")
+        elif username_guess != username and password_guess == password:
+            print("USERNAME: INCORRECT")
+            print("PASSWORD: CORRECT")
+        elif username_guess == username and password_guess != password:
+            print("USERNAME: CORRECT")
+            print("PASSWORD: INCORRECT")
+            print("A small hatch opens")
+            print("There is something inside.")
+            print('"...An access card..!"')
+            global access_card
+            access_card = {"name": "Ava",
+                           "age": "27",
+                           "profession": "research scientist"}
+            add_to_inventory(access_card)
+            print("\nThe access card was added to your inventory.\n")
+            print("At the top of the card there is a picture.")
+            print('\n"...That is... me..."\n')
+            print("You look at the information on the card.\n")
+            for key, value in access_card.items():
+                print(key, ' : ', value)
+            print('"...My name is... Ava and I am a scientist."')
+            print("Interrupting your thoughts, a door appears on the other side of the room.")
+            computer_scene()
 
 
 def main():
