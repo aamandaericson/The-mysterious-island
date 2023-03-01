@@ -136,7 +136,38 @@ def remove_from_inventory(item):
     inventory.remove(item)
 
 
-    
+def buttons_game():
+    """
+    Function that gives the user 10 attempts to get the right sequence of the buttons.
+    If answer is wrong, attempts decreases and if this reaches 0 the game_over function is called
+    and game quits. If the user gets the right sequence, the attempts is set to 0 to
+    quit the while loop and a key is added to players inventory.
+    """
+
+    attempts_left = 10
+    while attempts_left > 0:
+        answer = (input("Enter the button sequence (example 123): "))
+        if answer != "312":
+            attempts_left -= 1
+            print(f'"YOU HAVE {attempts_left} ATTEMPTS LEFT"')
+        else:
+            attempts_left = 0
+            print("\nThe box starts to buzz and then opens with a click!")
+            print("You carefully put your hand inside.")
+            print("You directly recognize the shape of a key!")
+
+            add_to_inventory("key")
+            search()
+            print("Go to computer")
+            break
+
+        if attempts_left == 0:
+            print("A loud buzz comes from the box.")
+            print("Followed by a slow ticking noice.")
+            print("The ticking intensifies.")
+            print("In a blink of an eye everything around you explodes.")
+            game_over()
+
 
 def main():
     """
