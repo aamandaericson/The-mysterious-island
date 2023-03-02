@@ -374,8 +374,19 @@ def time_room():
             print("Please enter one of the options!")
 
 def clock_game():
+    """
+    Function that use two nested functions to play the clock game. 
+    See nested function for information about these.
+    """
 
     def countdown():
+        """
+        Countdown to simulate a timer. If the player gets the time wrong,
+        in the following time_input function, the timer goes down.
+        The function uses a starting time which is a global variable.
+        Using the time.sleep(1) the print statements that prints the time, 
+        goes down one second at the time. 
+        """
         global starting_time
         starting_time -= 3
         for x in range(starting_time, starting_time - 3, -1):
@@ -391,6 +402,17 @@ def clock_game():
 
     
     def time_input():
+        """
+        Function that takes input from the player. 
+        The player gets to guess what time it is, entering input for,
+        hour hand and minute hand.
+        In a while loop there is a try that turns the input into an integer.
+        If this doesn't work the user gets an error message,
+        and have to try again.
+        In another while loop the program checks if the user guess,
+        is the same as the computer guess.
+        If not, the timer goes down using the countdown function.
+        """
         hour_hand = 3
         minute_hand = 15
 
