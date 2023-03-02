@@ -290,6 +290,11 @@ def computer_scene():
             if question_1 == question_1_guess and question_2 == question_2_guess and question_3 == question_3_guess:
                 print("\nALL RIDDLES WAS ANSWERED CORRECTLY.")
                 print("The computer starts to whir and a small note is printed.")
+                print("On it it says:\n")
+                print(" A candle")
+                print("V erb")
+                print("A n echo")
+                print('"Hmm... A, V, A... AVA...?"')
                 computer_scene()
                 break
 
@@ -300,7 +305,7 @@ def computer_scene():
             print("You go over to the door and try put the access card to the monitor.")
             print("The door opens!\n")
             print("You go through the door.\n")
-            print("time room.")
+            time_room()
         elif access_card not in inventory:
             print("\nYou walk away from the computer and realize you have to do something more with it.")
             print("You go back\n")
@@ -363,7 +368,7 @@ def time_room():
             for x in range(170, 166, -1):
                 print(str(x) + " SECONDS REMAINING")
                 time.sleep(1)
-            print("clock-game")
+            clock_game()
             break
         elif answer == "n":
             print("You had enough")
@@ -445,8 +450,8 @@ def clock_game():
                     if hour_hand_guess == hour_hand and minute_hand_guess == minute_hand:
                         print("AH! THE TIME IS A QUARTER PAST THREE.")
                         print("THANK YOU.")
-                        print("PLEASE MOVE ON TO THE NEXT ROOM.")
-                        print("water room")
+                        print("PLEASE TAKE THIS GIFT")
+                        read_article()
                         break
                     elif hour_hand_guess == hour_hand and minute_hand_guess != minute_hand:
                         print("\nTHAT IS THE RIGHT HOUR. BUT WHAT IS THE MINUTE?")
@@ -477,6 +482,24 @@ def clock_game():
     print("BELOW THE CLOCK IS A GREEN BUTTON TO PUSH.")
     print("DO THIS WHEN YOU HAVE DECIDED WHAT TIME TO ENTER.")
     time_input()
+
+
+def read_article():
+    """
+    Function where the player gets an article.
+    From this the user can figure out the password to the computer.
+    """
+    print("/nA hatch in the clock opens.")
+    print("Out pops an article from an old newspaper.")
+    print("The artilcle headline says:")
+    print("/n EVILCORP opens a new laboratory./n")
+    print('"EVILCORP... It sounds so familiar."')
+    print("You get an overwhelming thought to go back to the computer.")
+    print('"Maybe this is the password..."')
+    computer_scene()
+
+
+
 
 
 def main():
