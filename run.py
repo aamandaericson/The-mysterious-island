@@ -1,6 +1,7 @@
 import time
+# Time.sleep will be used throughout the game after print statements.
 
-# Empty list which items are added and removed from through functions. 
+# Empty list which items are added and removed from through functions.
 inventory = [""]
 
 # Starting health.
@@ -246,6 +247,7 @@ def computer_scene():
             time.sleep(2)
             print("PASSWORD: CORRECT")
             time.sleep(2)
+            game_ending()
         elif username_guess != username and password_guess.upper() == password:
             print("USERNAME: INCORRECT")
             time.sleep(2)
@@ -629,6 +631,43 @@ def read_article():
     print('"Maybe this is the password..."')
     time.sleep(2)
     computer_scene()
+
+
+def game_ending():
+    """
+    Final function that lets the user make a final decision. 
+    """
+    print("A door opens.")
+    time.sleep(2)
+    print("A woman in a lab coat steps in.")
+    time.sleep(2)
+    print('"Hello Ava." She says.')
+    time.sleep(2)
+    print("...Hello...?")
+    time.sleep(2)
+    print('"I am here to inform you that you passed your jobb application!"')
+    time.sleep(2)
+    print('"You are now qualified to come work for us at EVILCORP!"')
+    time.sleep(2)
+
+    while True:
+        answer = input("Do you accept this offer? (y/n): ")
+
+        if answer == 'y':
+            print('"Welcome to EVILCORP!"')
+            time.sleep(2)
+            print("\nYou accepted the offer!")
+            time.sleep(2)
+            print("You live out your days doing evil things for EVILCORP.")
+            time.sleep(2)
+            win_game()
+        elif answer == 'n':
+            print("The helmet starts to buzz.")
+            time.sleep(2)
+            game_over()
+        else:
+            print("Please answer y/n!")
+
 
 
 def main():
