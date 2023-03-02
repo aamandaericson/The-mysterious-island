@@ -196,18 +196,18 @@ def computer_scene():
         print(f"You choose {answer.upper()}")
 
         username = "ava"
-        password = "1965"
+        password = "EVILCORP"
 
         username_guess = input("ENTER USERNAME: ")
         password_guess = input("ENTER PASSWORD: ")
 
-        if username_guess == username and password_guess == password:
+        if username_guess == username and password_guess.upper() == password:
             print("USERNAME: CORRECT")
             print("PASSWORD: CORRECT")
-        elif username_guess != username and password_guess == password:
+        elif username_guess != username and password_guess.upper() == password:
             print("USERNAME: INCORRECT")
             print("PASSWORD: CORRECT")
-        elif username_guess == username and password_guess != password:
+        elif username_guess == username and password_guess.upper() != password:
             print("USERNAME: CORRECT")
             print("PASSWORD: INCORRECT")
             print("A small hatch opens")
