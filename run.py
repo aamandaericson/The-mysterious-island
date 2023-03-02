@@ -33,7 +33,7 @@ def intro():
 
     global answer
 
-    answer = str.lower((input("Do you want to start to feel your way around? (y/n): \n")))
+    answer = str.lower((input("Do you feel your way around? (y/n): \n")))
 
     if answer == "y":
         box_or_search()
@@ -60,7 +60,7 @@ def box_or_search():
     """
     Function that leads user to different places depending on input.
     Demands user input. While loop that runs until user input is "y" or "n".
-    In any other case the user will get a message, 
+    In any other case the user will get a message,
     that tells them to input "y" or "n".
     """
     print("\nYou realize you will not get the helmet of.")
@@ -83,15 +83,15 @@ def box_or_search():
 
 def open_box():
     """
-    Function that leads to the following buttons game. 
-    Print statements and then a function call. 
+    Function that leads to the following buttons game.
+    Print statements and then a function call.
     """
 
     print("The box seems to be made of metal.")
     time.sleep(2)
     print("You can feel three buttons on the top.")
     time.sleep(2)
-    print("You press one and suddenly a voice starts speaking to you from the box.\n")
+    print("Suddenly a voice starts speaking to you from the box.\n")
     time.sleep(2)
     print('"WELCOME TO YOUR FIRST TEST."')
     time.sleep(2)
@@ -106,17 +106,19 @@ def open_box():
 
 def search():
     """
-    Function that lets the user search around the room. 
-    If "key" is in the inventory list the computer_scene function is called. 
+    Function that lets the user search around the room.
+    If "key" is in the inventory list the computer_scene function is called.
     If not, the user will have to provide input if they want to
     keep searching or return to the box.
-    If they choose the box, the open_box function is called.  
+    If they choose the box, the open_box function is called.
     """
     print("\nYou let go of the box and keep feeling your way through the room")
     time.sleep(2)
-    print("When moving around you feel that something is pulling lightly onto the helmet")
+    print("When moving you feel that something is pulling onto the helmet")
     time.sleep(2)
-    print("You touch the back of your head and you can feel a small cord connected to the helmet.\n")
+    print("You touch the back of your head.")
+    time.sleep(2)
+    print("You can feel a small cord connected to the helmet.\n")
     time.sleep(2)
     print('..."What is this thing..?"\n')
     time.sleep(2)
@@ -141,7 +143,11 @@ def search():
             computer_scene()
             break
         else:
-            answer = input("You have no key, Do you want to keep exploring or go to the box? (explore/box): \n")
+            print("You have no key.")
+            time.sleep(2)
+            print("Do you want to explore or go to the box?")
+            time.sleep(2)
+            answer = input("Explore/box): \n")
 
             if answer == "explore":
                 print("You walk around but can't find anything but the box")
@@ -177,9 +183,10 @@ def remove_from_inventory(item):
 
 def buttons_game():
     """
-    Function that gives the user 10 attempts to get the right sequence of the buttons.
-    If answer is wrong, attempts decreases and if this reaches 0 the game_over function is called
-    and game quits. If the user gets the right sequence, the attempts is set to 0 to
+    Function that gives the user 10 attempts to get the right sequence.
+    If answer is wrong, attempts decreases and if this reaches 0,
+    the game_over function is called and game quits.
+    If the user gets the right sequence, the attempts is set to 0 to
     quit the while loop and a key is added to players inventory.
     """
 
@@ -220,7 +227,7 @@ def computer_scene():
     """
     The user enters the computer scene.
     Requires user input for choosing one of four alternatives.
-    Any other input than the four alternatives gives an error message, 
+    Any other input than the four alternatives gives an error message,
     and the user must try again.
 
 
@@ -281,7 +288,7 @@ def computer_scene():
                 print(key, ' : ', value)
             print('"...My name is... Ava and I am a scientist."')
             time.sleep(2)
-            print("Interrupting your thoughts, a door appears on the other side of the room.")
+            print("Interrupting your thoughts, a door suddenly appears.")
             time.sleep(2)
             computer_scene()
         else:
@@ -289,7 +296,7 @@ def computer_scene():
             time.sleep(2)
             print("PASSWORD: INCORRECT")
             time.sleep(2)
-    
+
     elif answer == "information":
         print("\nYOU HAVE BEEN PUT HERE TO BE TESTED.")
         time.sleep(2)
@@ -318,7 +325,9 @@ def computer_scene():
             print("ANSWER WISELY\n")
             time.sleep(2)
             question_1 = "candle"
-            question_1_guess = input(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD. WHAT AM I? (candle/mountain/glass): \n")
+            print(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD.")
+            time.sleep(2)
+            question_1_guess = input(" WHAT AM I? (candle/mountain/glass): \n")
             if question_1 == question_1_guess:
                 print("CORRECT! ANSWER: A candle")
                 time.sleep(2)
@@ -336,7 +345,9 @@ def computer_scene():
                 decrease_health()
 
             question_2 = "verb"
-            question_2_guess = input(" I RUN, I WALK, I TALK. WHAT AM I? (child/verb/ghost): \n")
+            print(" I RUN, I WALK, I TALK.")
+            time.sleep(2)
+            question_2_guess = input("WHAT AM I? (child/verb/ghost): \n")
             if question_2 == question_2_guess:
                 print("CORRECT! ANSWER: V erb")
             elif question_2 == "child" or "ghost":
@@ -353,7 +364,8 @@ def computer_scene():
                 decrease_health()
 
             question_3 = "echo"
-            question_3_guess = input(" WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO? (echo/mute/scream): \n")
+            print("WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO?")
+            question_3_guess = input("(echo/mute/scream): \n")
             if question_3 == question_3_guess:
                 print("CORRECT! ANSWER: A n echo")
                 time.sleep(2)
@@ -373,7 +385,7 @@ def computer_scene():
             if question_1 == question_1_guess and question_2 == question_2_guess and question_3 == question_3_guess:
                 print("\nALL RIDDLES WAS ANSWERED CORRECTLY.")
                 time.sleep(2)
-                print("The computer starts to whir and a small note is printed.")
+                print("A small note is printed.")
                 time.sleep(2)
                 print("On it it says:\n")
                 time.sleep(2)
@@ -391,7 +403,9 @@ def computer_scene():
                 time.sleep(2)
     elif answer == "leave":
         if access_card in inventory:
-            print("You go over to the door and try put the access card to the monitor.")
+            print("You go over to the door.")
+            time.sleep(2)
+            print("You put the access card to the monitor.")
             time.sleep(2)
             print("The door opens!\n")
             time.sleep(2)
@@ -399,14 +413,18 @@ def computer_scene():
             time.sleep(2)
             time_room()
         elif access_card not in inventory:
-            print("\nYou walk away from the computer and realize you have to do something more with it.")
+            print("\nYou walk away from the computer.")
+            time.sleep(2)
+            print("You realize you have to do something more with it.")
             time.sleep(2)
             print("You go back\n")
             time.sleep(2)
             computer_scene()
 
         else:
-            print("\nYou walk away from the computer and realize you have to do something more with it.")
+            print("\nYou walk away from the computer.")
+            time.sleep(2)
+            print("You realize you have to do something more with it.")
             time.sleep(2)
             print("You go back\n")
             time.sleep(2)
@@ -435,8 +453,8 @@ def decrease_health():
 
 def time_room():
     """
-    Function that takes user input to start the minigame. 
-    Inside a while loop the user input leads to differen scenarios. 
+    Function that takes user input to start the minigame.
+    Inside a while loop the user input leads to differen scenarios.
     A for loop creates a count down.
     """
     print("\nA voice speaks through a speaker")
@@ -466,7 +484,9 @@ def time_room():
 
             print('\n"...What am I supposed to do..?"\n')
             time.sleep(2)
-            print("You desperately look around and see a table with something on it.")
+            print("You desperately look around.")
+            time.sleep(2)
+            print("You see a table with something on it.")
             time.sleep(2)
             print("You run over to see what it is and realize it is a clock.")
             time.sleep(2)
@@ -489,9 +509,10 @@ def time_room():
             print("Please enter one of the options!")
             time.sleep(2)
 
+
 def clock_game():
     """
-    Function that use two nested functions to play the clock game. 
+    Function that use two nested functions to play the clock game.
     See nested function for information about these.
     """
 
@@ -500,8 +521,8 @@ def clock_game():
         Countdown to simulate a timer. If the player gets the time wrong,
         in the following time_input function, the timer goes down.
         The function uses a starting time which is a global variable.
-        Using the time.sleep(1) the print statements that prints the time, 
-        goes down one second at the time. 
+        Using the time.sleep(1) the print statements that prints the time,
+        goes down one second at the time.
         """
         global starting_time
         starting_time -= 3
@@ -520,10 +541,10 @@ def clock_game():
             time.sleep(2)
             game_over()
 
-    
+
     def time_input():
         """
-        Function that takes input from the player. 
+        Function that takes input from the player.
         The player gets to guess what time it is, entering input for,
         hour hand and minute hand.
         In a while loop there is a try that turns the input into an integer.
@@ -544,7 +565,7 @@ def clock_game():
                 else:
                     print("\nPLEASE ENTER NUMBERS BETWEEN 1-12 FOR HOURS.\n")
             except ValueError:
-                    print("\nPLEASE ENTER NUMBERS BETWEEN 1-12 FOR HOURS.\n")
+                print("\nPLEASE ENTER NUMBERS BETWEEN 1-12 FOR HOURS.\n")
 
         while True:
             try:
@@ -635,7 +656,7 @@ def read_article():
 
 def game_ending():
     """
-    Final function that lets the user make a final decision. 
+    Final function that lets the user make a final decision.
     """
     print("A door opens.")
     time.sleep(2)
