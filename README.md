@@ -1,31 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The mysterious room
+The mysterious room is a text-adventure game which uses a lot of guessing games and some riddles. 
+It's an exciting game that you can play to challenge your self and see if you can make it to the end of the game!
 
-Welcome aamandaericson,
+![Image of am I responsive](assets/images-for-readme/responsive.PNG))
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Features
+ ### Existing features
+* App
+  *  The game is run in a mock terminal and is presented as an app on the heroku website.
+  
+  ![Overview of game](assets/images-for-readme/intro.PNG)
 
-## Reminders
+* Input
+  * The player is throughout the game promted to provide input. 
+  * The input provided leads the player through different rooms and choices. Depending on what the player chooses the story will end differently.
+  <br>
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+  ![Image of result](assets/images-for-readme/text-adventure.PNG)
 
-## Creating the Heroku app
+  ### Features left to implement
+  * When there is time I would like to add more rooms and a deeper story. 
+  * I would also like to implement more try and except statements to make sure the game won't crash in case something I haven't thought of occures. At this point most of the choices are based on only if else statements which might become a problem in case bugs occure. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+  ## Testing
+   * Í have checked the code through the pep8 linter and it gets 7 warnings for too long lines.
+        These lines are lines with long comparative expressions.
+   * I have done manual testing for bugs. 
+   * Tested in my local terminal and the Heroku terminal.
+   <br> 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Bugs 
+  #### Solved bugs
+   * I came across bugs where peices of text kept repeating through out the story. This was beacause I hadn't used break during a while loop. 
+   #### Remaining bugs
+   * No known remaining bugs. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Validator testing
+   * PEP8
+     * Seven warnings for too long lines.  
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## Deployment
+   * This project was deployed using Code institutes mock terminal for Heroku.
+   * The steps for deployment are as follows.
+      * Fork or clone this repository.
+      * Create a new Heroku app.
+      * Set the build packs to Python and NodeJS in that order.
+      * Link the Heroku App to the repository.
+      * Click on deploy.
 
-## Constraints
+## Credits
+   * Code Institute for the deployment terminal.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+
+
+
