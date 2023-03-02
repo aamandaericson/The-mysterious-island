@@ -541,7 +541,6 @@ def clock_game():
             time.sleep(2)
             game_over()
 
-
     def time_input():
         """
         Function that takes input from the player.
