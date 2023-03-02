@@ -669,6 +669,15 @@ def game_ending():
             print("Please answer y/n!")
 
 
+def win_game():
+    """
+    Print statement for winning the game.
+    """
+    print("Congratulations! You won the game!")
+    quit()
+
+
+
 
 def main():
     """
