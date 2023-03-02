@@ -33,7 +33,7 @@ def intro():
 
     global answer
 
-    answer = str.lower((input("Do you want to start to feel your way around? (y/n): ")))
+    answer = str.lower((input("Do you want to start to feel your way around? (y/n): \n")))
 
     if answer == "y":
         box_or_search()
@@ -70,7 +70,7 @@ def box_or_search():
     print("Crawling around on your knees, you find what feels like a box.\n")
     time.sleep(2)
     while True:
-        answer = input("Do you open the box? (y/n): ")
+        answer = input("Do you open the box? (y/n): \n")
         if answer == "y":
             open_box()
             break
@@ -141,7 +141,7 @@ def search():
             computer_scene()
             break
         else:
-            answer = input("You have no key, Do you want to keep exploring or go to the box? (explore/box): ")
+            answer = input("You have no key, Do you want to keep exploring or go to the box? (explore/box): \n")
 
             if answer == "explore":
                 print("You walk around but can't find anything but the box")
@@ -185,7 +185,7 @@ def buttons_game():
 
     attempts_left = 10
     while attempts_left > 0:
-        answer = (input("Enter the button sequence (example 123): "))
+        answer = (input("Enter the button sequence (example 123): \n"))
         if answer != "312":
             attempts_left -= 1
             print(f'"YOU HAVE {attempts_left} ATTEMPTS LEFT"')
@@ -232,15 +232,15 @@ def computer_scene():
           "PLAY\n"
           "LEAVE\n")
     time.sleep(2)
-    answer = input("What do you choose? (login/information/play/leave): ")
+    answer = input("What do you choose? (login/information/play/leave): \n")
     if answer == "login":
         print(f"You choose {answer.upper()}")
 
         username = "ava"
         password = "EVILCORP"
 
-        username_guess = input("ENTER USERNAME: ")
-        password_guess = input("ENTER PASSWORD: ")
+        username_guess = input("ENTER USERNAME: \n")
+        password_guess = input("ENTER PASSWORD: \n")
 
         if username_guess == username and password_guess.upper() == password:
             print("USERNAME: CORRECT")
@@ -318,7 +318,7 @@ def computer_scene():
             print("ANSWER WISELY\n")
             time.sleep(2)
             question_1 = "candle"
-            question_1_guess = input(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD. WHAT AM I? (candle/mountain/glass): ")
+            question_1_guess = input(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD. WHAT AM I? (candle/mountain/glass): \n")
             if question_1 == question_1_guess:
                 print("CORRECT! ANSWER: A candle")
                 time.sleep(2)
@@ -336,7 +336,7 @@ def computer_scene():
                 decrease_health()
 
             question_2 = "verb"
-            question_2_guess = input(" I RUN, I WALK, I TALK. WHAT AM I? (child/verb/ghost): ")
+            question_2_guess = input(" I RUN, I WALK, I TALK. WHAT AM I? (child/verb/ghost): \n")
             if question_2 == question_2_guess:
                 print("CORRECT! ANSWER: V erb")
             elif question_2 == "child" or "ghost":
@@ -353,7 +353,7 @@ def computer_scene():
                 decrease_health()
 
             question_3 = "echo"
-            question_3_guess = input(" WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO? (echo/mute/scream): ")
+            question_3_guess = input(" WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO? (echo/mute/scream): \n")
             if question_3 == question_3_guess:
                 print("CORRECT! ANSWER: A n echo")
                 time.sleep(2)
@@ -448,7 +448,7 @@ def time_room():
     print("DO YOU WISH TO START THE TEST?\n")
     time.sleep(2)
 
-    answer = input("Start test? (y/n): ")
+    answer = input("Start test? (y/n): \n")
     while True:
         if answer == "y":
             print("YOU CHOSE TO START THE TEST.")
@@ -538,7 +538,7 @@ def clock_game():
 
         while True:
             try:
-                hour_hand_guess = int(input("HOUR HAND: "))
+                hour_hand_guess = int(input("HOUR HAND: \n"))
                 if 0 < int(hour_hand_guess) <= 12:
                     break
                 else:
@@ -548,7 +548,7 @@ def clock_game():
 
         while True:
             try:
-                minute_hand_guess = int(input("MINUTE HAND: "))
+                minute_hand_guess = int(input("MINUTE HAND: \n"))
                 if 0 <= int(minute_hand_guess) < 60:
                     break
                 else:
@@ -558,7 +558,7 @@ def clock_game():
 
         while True:
             try:
-                green_button = input("Is this the time? (y/n): ")
+                green_button = input("Is this the time? (y/n): \n")
                 if green_button == "y":
 
                     # Code to check answer
@@ -651,7 +651,7 @@ def game_ending():
     time.sleep(2)
 
     while True:
-        answer = input("Do you accept this offer? (y/n): ")
+        answer = input("Do you accept this offer? (y/n): \n")
 
         if answer == 'y':
             print('"Welcome to EVILCORP!"')
@@ -675,8 +675,6 @@ def win_game():
     """
     print("Congratulations! You won the game!")
     quit()
-
-
 
 
 def main():
