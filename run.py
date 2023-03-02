@@ -17,11 +17,17 @@ def intro():
     Any other input leads to demand for input from user again.
     """
     print("You wake up and open your eyes but you can't see anything")
+    time.sleep(2)
     print("You stretch your arms up to your head and feel something weird.")
+    time.sleep(2)
     print("A helmet of some sort is on your head.")
+    time.sleep(2)
     print("You try to remove it but you can't.")
+    time.sleep(2)
     print("You try to pull it of with all of your strength but it's stuck.\n")
+    time.sleep(2)
     print('"... What is this... Where am I... What is going on?"\n')
+    time.sleep(2)
     print('"... I do not remember anything... Not even my name..."\n')
 
     global answer
@@ -32,7 +38,9 @@ def intro():
         box_or_search()
     elif answer == "n":
         print("\nYou give up and accept your fate.")
+        time.sleep(2)
         print("Days go by and you finally close your eyes and never wake up.")
+        time.sleep(2)
         game_over()
     else:
         print("Incorrect input! Please answer y/n")
@@ -55,15 +63,18 @@ def box_or_search():
     that tells them to input "y" or "n".
     """
     print("\nYou realize you will not get the helmet of.")
+    time.sleep(2)
     print("You start using your hands to feel around.")
+    time.sleep(2)
     print("Crawling around on your knees, you find what feels like a box.\n")
+    time.sleep(2)
     while True:
         answer = input("Do you open the box? (y/n): ")
         if answer == "y":
             open_box()
             break
         elif answer == "n":
-            print("search")
+            search()
             break
         else:
             print("Incorrect input! Please answer y/n")
@@ -76,12 +87,19 @@ def open_box():
     """
 
     print("The box seems to be made of metal.")
+    time.sleep(2)
     print("You can feel three buttons on the top.")
+    time.sleep(2)
     print("You press one and suddenly a voice starts speaking to you from the box.\n")
+    time.sleep(2)
     print('"WELCOME TO YOUR FIRST TEST."')
-    print('"PLEASE ENTER PRESS THE BUTTONS IN THE RIGHT SEQUENCE!\n')
+    time.sleep(2)
+    print('"PLEASE PRESS THE BUTTONS IN THE RIGHT SEQUENCE!\n')
+    time.sleep(2)
     print('"...My first test..?"')
+    time.sleep(2)
     print('"...I guess I have to find the right sequence then..?"\n')
+    time.sleep(2)
     buttons_game()
 
 
@@ -94,20 +112,31 @@ def search():
     If they choose the box, the open_box function is called.  
     """
     print("\nYou let go of the box and keep feeling your way through the room")
+    time.sleep(2)
     print("When moving around you feel that something is pulling lightly onto the helmet")
+    time.sleep(2)
     print("You touch the back of your head and you can feel a small cord connected to the helmet.\n")
+    time.sleep(2)
     print('..."What is this thing..?"\n')
+    time.sleep(2)
     print("You keep moving around and bump into something.")
+    time.sleep(2)
     print("It seems to be a desk and you can feel a bunch of wires.\n")
+    time.sleep(2)
     print('"... It must be a computer..!"\n')
+    time.sleep(2)
     print("Blindly feeling around, you some feel some sort of cavity.")
+    time.sleep(2)
     print('"A key hole!"\n')
+    time.sleep(2)
 
     while True:
         if "key" in inventory:
             print("You put the key in the key hole.")
+            time.sleep(2)
             remove_from_inventory("key")
             print("Key was removed from your inventory\n")
+            time.sleep(2)
             computer_scene()
             break
         else:
@@ -115,6 +144,7 @@ def search():
 
             if answer == "explore":
                 print("You walk around but can't find anything but the box")
+                time.sleep(2)
                 answer = input("Do you want to open the box? (y/n): ")
                 if answer == "y":
                     open_box()
@@ -158,11 +188,15 @@ def buttons_game():
         if answer != "312":
             attempts_left -= 1
             print(f'"YOU HAVE {attempts_left} ATTEMPTS LEFT"')
+            time.sleep(2)
         else:
             attempts_left = 0
             print("\nThe box starts to buzz and then opens with a click!")
+            time.sleep(2)
             print("You carefully put your hand inside.")
+            time.sleep(2)
             print("You directly recognize the shape of a key!")
+            time.sleep(2)
 
             add_to_inventory("key")
             search()
@@ -171,9 +205,13 @@ def buttons_game():
 
         if attempts_left == 0:
             print("A loud buzz comes from the box.")
+            time.sleep(2)
             print("Followed by a slow ticking noice.")
+            time.sleep(2)
             print("The ticking intensifies.")
+            time.sleep(2)
             print("In a blink of an eye everything around you explodes.")
+
             game_over()
 
 
@@ -187,10 +225,12 @@ def computer_scene():
 
     """
     print("On the display you can see four choices\n")
+    time.sleep(2)
     print("LOGIN\n"
           "INFORMATION\n"
           "PLAY\n"
           "LEAVE\n")
+    time.sleep(2)
     answer = input("What do you choose? (login/information/play/leave): ")
     if answer == "login":
         print(f"You choose {answer.upper()}")
@@ -203,42 +243,66 @@ def computer_scene():
 
         if username_guess == username and password_guess.upper() == password:
             print("USERNAME: CORRECT")
+            time.sleep(2)
             print("PASSWORD: CORRECT")
+            time.sleep(2)
         elif username_guess != username and password_guess.upper() == password:
             print("USERNAME: INCORRECT")
+            time.sleep(2)
             print("PASSWORD: CORRECT")
+            time.sleep(2)
         elif username_guess == username and password_guess.upper() != password:
             print("USERNAME: CORRECT")
+            time.sleep(2)
             print("PASSWORD: INCORRECT")
+            time.sleep(2)
             print("A small hatch opens")
+            time.sleep(2)
             print("There is something inside.")
+            time.sleep(2)
             print('"...An access card..!"')
+            time.sleep(2)
             global access_card
             access_card = {"name": "Ava",
                            "age": "27",
                            "profession": "research scientist"}
             add_to_inventory(access_card)
             print("\nThe access card was added to your inventory.\n")
+            time.sleep(2)
             print("At the top of the card there is a picture.")
+            time.sleep(2)
             print('\n"...That is... me..."\n')
+            time.sleep(2)
             print("You look at the information on the card.\n")
+            time.sleep(2)
             for key, value in access_card.items():
                 print(key, ' : ', value)
             print('"...My name is... Ava and I am a scientist."')
+            time.sleep(2)
             print("Interrupting your thoughts, a door appears on the other side of the room.")
+            time.sleep(2)
             computer_scene()
         else:
             print("USERNAME: INCORRECT")
+            time.sleep(2)
             print("PASSWORD: INCORRECT")
+            time.sleep(2)
     
     elif answer == "information":
         print("\nYOU HAVE BEEN PUT HERE TO BE TESTED.")
+        time.sleep(2)
         print("THE TESTS WILL BE HARD AND CHALLENGING.")
+        time.sleep(2)
         print("SOME TESTS MIGHT KILL YOU AT ONCE.")
+        time.sleep(2)
         print("SOME TESTS MIGHT JUST HARM YOU.")
+        time.sleep(2)
         print("FINAL TEST WILL BE GIVEN WHEN LOGGED IN.\n")
+        time.sleep(2)
         print("A sharp pain shoots through your head")
+        time.sleep(2)
         print("Some sort of electric chock buzz you through the helmet\n")
+        time.sleep(2)
         decrease_health()
         computer_scene()
 
@@ -246,19 +310,27 @@ def computer_scene():
         play = True
         while play:
             print("\nYOU CHOSE PLAY, WELCOME TO THE GAME")
+            time.sleep(2)
             print("YOU WILL BE ASKED THREE RIDDLES.")
+            time.sleep(2)
             print("ANSWER WISELY\n")
+            time.sleep(2)
             question_1 = "candle"
             question_1_guess = input(" I'M TALL WHEN I'm YOUNG, AND I'M SHORT WHEN I'M OLD. WHAT AM I? (candle/mountain/glass): ")
             if question_1 == question_1_guess:
                 print("CORRECT! ANSWER: A candle")
+                time.sleep(2)
             elif question_1 == "mountain" or "glass":
                 print("INCORRECT!")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
             else:
                 print("INCORRECT INPUT")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
 
             question_2 = "verb"
@@ -267,53 +339,75 @@ def computer_scene():
                 print("CORRECT! ANSWER: V erb")
             elif question_2 == "child" or "ghost":
                 print("INCORRECT!")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
             else:
                 print("INCORRECT INPUT")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
 
             question_3 = "echo"
             question_3_guess = input(" WHAT CAN'T TALK BUT WILL REPLY WHEN SPOKEN TO? (echo/mute/scream): ")
             if question_3 == question_3_guess:
                 print("CORRECT! ANSWER: A n echo")
+                time.sleep(2)
             elif question_3 == "mute" or "scream":
                 print("INCORRECT!")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
             else:
                 print("INCORRECT INPUT")
+                time.sleep(2)
                 print("You feel a sharp pain.")
+                time.sleep(2)
                 decrease_health()
 
             if question_1 == question_1_guess and question_2 == question_2_guess and question_3 == question_3_guess:
                 print("\nALL RIDDLES WAS ANSWERED CORRECTLY.")
+                time.sleep(2)
                 print("The computer starts to whir and a small note is printed.")
+                time.sleep(2)
                 print("On it it says:\n")
+                time.sleep(2)
                 print(" A candle")
                 print("V erb")
                 print("A n echo")
+                time.sleep(2)
                 print('"Hmm... A, V, A... AVA...?"')
+                time.sleep(2)
                 computer_scene()
                 break
 
             else:
                 print("\nONE OR MORE INCORRECT ANSWERS, TRY AGAIN\n")
+                time.sleep(2)
     elif answer == "leave":
         if access_card in inventory:
             print("You go over to the door and try put the access card to the monitor.")
+            time.sleep(2)
             print("The door opens!\n")
+            time.sleep(2)
             print("You go through the door.\n")
+            time.sleep(2)
             time_room()
         elif access_card not in inventory:
             print("\nYou walk away from the computer and realize you have to do something more with it.")
+            time.sleep(2)
             print("You go back\n")
+            time.sleep(2)
             computer_scene()
 
         else:
             print("\nYou walk away from the computer and realize you have to do something more with it.")
+            time.sleep(2)
             print("You go back\n")
+            time.sleep(2)
             computer_scene()
 
 
@@ -325,11 +419,15 @@ def decrease_health():
     global health
     health -= 10
     print(f"Your health: {health}\n")
+    time.sleep(2)
 
     if health == 0:
         print("The pain is so sharp.")
+        time.sleep(2)
         print("You feel panicked and fall to the ground.")
+        time.sleep(2)
         print("Everything goes dark.")
+        time.sleep(2)
         game_over()
 
 
@@ -340,17 +438,25 @@ def time_room():
     A for loop creates a count down.
     """
     print("\nA voice speaks through a speaker")
+    time.sleep(2)
     print("\nWELCOME TO THE TIME ROOM.")
+    time.sleep(2)
     print("HERE, TIME IS OF THE ESSENCE.")
+    time.sleep(2)
     print("DO YOU WISH TO START THE TEST?\n")
+    time.sleep(2)
 
     answer = input("Start test? (y/n): ")
     while True:
         if answer == "y":
             print("YOU CHOSE TO START THE TEST.")
+            time.sleep(2)
             print("A ticking sound starts.")
+            time.sleep(2)
             print("Then it changes into a robotic voice")
+            time.sleep(2)
             print("\nCOUNTDOWN STARTING. YOU HAVE 180 SECONDS\n")
+            time.sleep(2)
 
             for x in range(180, 177, -1):
                 print(str(x) + " SECONDS REMAINING")
@@ -372,11 +478,14 @@ def time_room():
             break
         elif answer == "n":
             print("You had enough")
+            time.sleep(2)
             print('\n"I don\'t want to do this anymore!"\n')
+            time.sleep(2)
             decrease_health()
             time_room()
         else:
             print("Please enter one of the options!")
+            time.sleep(2)
 
 def clock_game():
     """
@@ -400,9 +509,13 @@ def clock_game():
 
         if time == 0:
             print("YOUR TIME IS UP")
+            time.sleep(2)
             print("EVERYTHING GOES DARK.")
+            time.sleep(2)
             print("DEATH WILL BE FAST.")
+            time.sleep(2)
             print("THE SHARP PAIN CONSUMES YOU UNTIL YOU ARE NO MORE.")
+            time.sleep(2)
             game_over()
 
     
@@ -449,23 +562,32 @@ def clock_game():
                     # Code to check answer
                     if hour_hand_guess == hour_hand and minute_hand_guess == minute_hand:
                         print("AH! THE TIME IS A QUARTER PAST THREE.")
+                        time.sleep(2)
                         print("THANK YOU.")
+                        time.sleep(2)
                         print("PLEASE TAKE THIS GIFT")
+                        time.sleep(2)
                         read_article()
                         break
                     elif hour_hand_guess == hour_hand and minute_hand_guess != minute_hand:
                         print("\nTHAT IS THE RIGHT HOUR. BUT WHAT IS THE MINUTE?")
+                        time.sleep(2)
                         print("PLEASE TRY AGAIN\n")
+                        time.sleep(2)
                         countdown()
                         time_input()
                     elif hour_hand_guess != hour_hand and minute_hand_guess == minute_hand:
                         print("\nTHAT IS THE RIGHT MINUTE. BUT WHAT IS THE HOUR?")
+                        time.sleep(2)
                         print("PLEASE TRY AGAIN\n")
+                        time.sleep(2)
                         countdown()
                         time_input()
                     elif hour_hand_guess != hour_hand and minute_hand_guess != minute_hand:
                         print("\nTHAT IS NOT THE TIME.")
+                        time.sleep(2)
                         print("PLEASE TRY AGAIN\n")
+                        time.sleep(2)
                         countdown()
                         time_input()
                     else:
@@ -476,11 +598,17 @@ def clock_game():
             except ValueError:
                 print("\nPLEASE ENTER y or n.\n")
     print("From a speaker in the clock a voice speaks to you.")
+    time.sleep(2)
     print("WELCOME TO THE CLOCK GAME.")
+    time.sleep(2)
     print("WHAT AN AFTERNOON DELIGHT TO SEE YOU HERE.")
+    time.sleep(2)
     print("WHAT TIME IS IT?")
+    time.sleep(2)
     print("BELOW THE CLOCK IS A GREEN BUTTON TO PUSH.")
+    time.sleep(2)
     print("DO THIS WHEN YOU HAVE DECIDED WHAT TIME TO ENTER.")
+    time.sleep(2)
     time_input()
 
 
@@ -490,16 +618,17 @@ def read_article():
     From this the user can figure out the password to the computer.
     """
     print("\nA hatch in the clock opens.")
+    time.sleep(2)
     print("Out pops an article from an old newspaper.")
+    time.sleep(2)
     print("The artilcle headline says:")
+    time.sleep(2)
     print("\n EVILCORP opens a new laboratory./n")
     print('"EVILCORP... It sounds so familiar."')
     print("You get an overwhelming thought to go back to the computer.")
     print('"Maybe this is the password..."')
+    time.sleep(2)
     computer_scene()
-
-
-
 
 
 def main():
