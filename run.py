@@ -489,10 +489,10 @@ def read_article():
     Function where the player gets an article.
     From this the user can figure out the password to the computer.
     """
-    print("/nA hatch in the clock opens.")
+    print("\nA hatch in the clock opens.")
     print("Out pops an article from an old newspaper.")
     print("The artilcle headline says:")
-    print("/n EVILCORP opens a new laboratory./n")
+    print("\n EVILCORP opens a new laboratory./n")
     print('"EVILCORP... It sounds so familiar."')
     print("You get an overwhelming thought to go back to the computer.")
     print('"Maybe this is the password..."')
