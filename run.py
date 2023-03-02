@@ -474,7 +474,8 @@ def clock_game():
     print("WELCOME TO THE CLOCK GAME.")
     print("WHAT AN AFTERNOON DELIGHT TO SEE YOU HERE.")
     print("WHAT TIME IS IT?")
-    print("Below the clock is a green button to push when you've decided what time to enter.")
+    print("BELOW THE CLOCK IS A GREEN BUTTON TO PUSH.")
+    print("DO THIS WHEN YOU HAVE DECIDED WHAT TIME TO ENTER.")
     time_input()
 
 
